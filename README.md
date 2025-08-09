@@ -41,7 +41,7 @@
 برای نصب تنها کافیست این دستور را در کنسول سرور ایزابل وارد کنید:
 
 ```
-curl -s -L https://raw.githubusercontent.com/voipiran/IssabelLetsEncrypt/master/getLetsIssabel.sh | bash
+curl -s -L https://raw.githubusercontent.com/voipiran/IssabelLetsEncrypt/master/getLetsIssabel.sh -o /tmp/getLetsIssabel.sh && bash /tmp/getLetsIssabel.sh
 ```
 ✨ این اسکریپت به صورت خودکار انجام می‌دهد:
 دریافت گواهی SSL از Let's Encrypt
