@@ -55,6 +55,21 @@ curl -s -L https://raw.githubusercontent.com/voipiran/IssabelLetsEncrypt/master/
 💡 نکات تکمیلی
 گواهی‌ها به مدت ۹۰ روز اعتبار دارند و امکان تمدید خودکار نیز فراهم شده است.
 
+اگر Nginx روی سرور نصب باشد، اسکریپت پس از دریافت یا تمدید گواهی، تنظیمات آن را
+بررسی و reload می‌کند. در نصب VOIPIRAN WebPhone، اسکریپت
+`/var/www/voipiran/installSH/webphone.sh` نیز اجرا می‌شود تا listener وب‌فون روی
+پورت `9002` از مسیرهای پایدار زیر استفاده کند:
+
+```text
+/etc/letsencrypt/live/<domain>/fullchain.pem
+/etc/letsencrypt/live/<domain>/privkey.pem
+```
+
+Nginx برای اجرای خود Issabel الزامی نیست. اگر نصب نشده باشد، تنظیم گواهی Apache،
+Asterisk و WebRTC انجام می‌شود و بخش Nginx صرفاً نادیده گرفته خواهد شد. اگر Nginx
+نصب باشد اما WebPhone نصب نشده باشد، اسکریپت کانفیگ‌های عمومی Nginx را تغییر
+نمی‌دهد و فقط پس از تست موفق، آن را reload می‌کند.
+
 در صورت تغییر دامنه یا IP، می‌توانید مجدداً اسکریپت را اجرا نمایید.
 
 
